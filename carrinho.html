@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - CA Ferreira Pães</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Carrinho</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="informacoes.html">Mais Informações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-carrinho">
+        <h2>Itens no Carrinho</h2>
+        <p id="carrinho-itens"></p>
+        <h3 id="total">Total: R$ 0.00</h3>
+        <div class="botao-container">
+        <button onclick="seguirParaEntrega()">Seguir para Entrega</button>
+    </div>
+    </main>
+
+    <footer>
+        <p>Horário de funcionamento - Todos os Dias, das 08h às 22hs</p>
+    </footer>
+
+    <script>
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+function renderizarCarrinho() {
+    const listaCarrinho = document.getElementById('carrinho-itens');
+    const totalElement = document.getElementById('total');
+    listaCarrinho.innerHTML = '';
+
+    if (carrinho.length === 0) {
+        listaCarrinho.innerHTML = '<li>Carrinho vazio.</li>';
+        totalElement.innerHTML = 'Total: R$ 0.00';
+        return;
+    }
+
+    let total = 0;
+
+    carrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)} 
+            | Quantidade: <input type="number" value="${item.quantidade}" 
+            onchange="atualizarQuantidade(${index}, this.value)" 
+            onkeypress="if(event.key === 'Enter') atualizarQuantidade(${index}, this.value)" min="1" />
+            <button onclick="removerDoCarrinho(${index})">Remover</button>
+        `;
+        listaCarrinho.appendChild(li);
+        total += item.preco;
+    });
+
+    totalElement.innerHTML = `Total: R$ ${total.toFixed(2)}`;
+}
+
+function atualizarQuantidade(index, novaQuantidade) {
+    const quantidadeNum = parseInt(novaQuantidade);
+    if (quantidadeNum <= 0 || isNaN(quantidadeNum)) {
+        alert('Por favor, insira uma quantidade válida.');
+        return;
+    }
+
+    const item = carrinho[index];
+    if (item) {
+        const precoPorUnidade = item.preco / item.quantidade;
+        item.preco = precoPorUnidade * quantidadeNum;
+        item.quantidade = quantidadeNum;
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        renderizarCarrinho();
+    }
+}
+
+function removerDoCarrinho(index) {
+    carrinho.splice(index, 1);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    renderizarCarrinho();
+}
+
+function seguirParaEntrega() {
+    const totalElement = document.getElementById('total').innerText;
+    const total = parseFloat(totalElement.replace('Total: R$ ', '').replace(',', '.')); // Corrige a conversão
+    localStorage.setItem('totalPedido', total); // Armazena como número
+    window.location.href = 'entrega.html';
+}
+
+window.onload = renderizarCarrinho;
+
+
+    </script>
+</body>
+</html>

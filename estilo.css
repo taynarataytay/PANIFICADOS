@@ -1,0 +1,348 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f3e9;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #7B5B4D;
+    color: white;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens do cabeçalho */
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 8px;
+}
+
+.header-items {
+    margin-left: 350px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.header-items ul {
+    display: flex;
+    align-items: center; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    display: flex;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+h2, h3 {
+    color: #5b3e30; 
+    font-size: 2em; /* Tamanho dos títulos */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+input[type="text"] { /* Barra de pesquisa */
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+#carrinho-icon {
+    position: relative;
+    padding: 5px;
+}
+
+#carrinho-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.sobre {
+    background-color: #ffffff;
+    padding: 20px; 
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra*/
+}
+
+
+.sobre p {
+    color: #5b3e30;
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    line-height: 1.8; /* Espaçamento entre linhas */
+    text-align: center;
+}
+
+
+.sobre h3 {
+ text-align: center;
+}
+
+.produtos {
+    background-color: #7B5B4D;
+    color: white;
+    padding: 5px 20px; 
+    display: flex;
+    text-align: center; 
+    margin: 20px 0; 
+    border-radius: 8px;
+}
+
+main {
+    margin-top: 20px; /* Espaçamento acima do main */
+}
+
+.categorias {
+    margin-top: 20px; 
+    text-align: center; 
+}
+
+.product-carousel {
+    display: flex; 
+    align-items: center;
+    overflow: hidden; /* Oculta excesso de conteúdo */
+    justify-content: center; 
+}
+
+.product-list {
+    display: flex; /* Flexbox para a lista de produtos */
+    transition: transform 0.3s ease; /* Transição */
+    width: calc(100% - 40px); /* Largura total menos margens */
+    justify-content: center; 
+}
+
+.product {
+    flex: 0 0 24%; /* Largura dos cards */
+    box-sizing: border-box; 
+    padding: 10px;
+    background-color: #d4b996;
+    border-radius: 8px; 
+    margin: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Centraliza texto no card */
+    transition: transform 0.3s; /* Transição suave no hover */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.product img {
+    max-width: 90%; /* Tamanho máximo da imagem */
+    height: auto; /* Altura automática */
+}
+
+.product h3 {
+    font-size: 1.5em; /* Tamanho do título do produto */
+    margin-bottom: 5px; /* Espaçamento abaixo do título */
+    
+}
+
+.product p {
+    font-size: 1.3em; /* Tamanho do texto do produto */
+    color: #5b3e30; /* Cor do texto */
+    margin: 0; /* Remove margens */
+}
+
+button.carousel-btn {
+    background-color: #5b3e30; /* Cor do botão */
+    color: #fff;
+    padding: 10px; /* Preenchimento do botão */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor pointer */
+    margin: 0 15px;
+}
+
+button.carousel-btn:hover {
+    background-color: #7f5a43;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px; /* Preenchimento do formulário */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+label {
+    display: block; /* Exibe como bloco */
+    margin: 10px 0 5px; 
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px); /* Largura */
+    padding: 10px;
+    border: 1px solid #d4b996; /* Borda dos campos */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Margem abaixo dos campos */
+    transition: border-color 0.3s; /* Transição da cor da borda */
+}
+
+select {
+    width: calc(30% - 20px); /* Largura do select */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #5b3e30; /* Cor da borda em foco */
+    outline: none; /* Remove contorno */
+}
+
+button {
+    background-color: #5b3e30; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    padding: 10px 15px; /* Preenchimento do botão */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor pointer */
+    margin-right: 10px; /* Margem à direita */
+    transition: background-color 0.3s; /* Transição da cor de fundo */
+}
+
+button:hover {
+    background-color: #7f5a43; /* Cor do botão ao passar o mouse */
+}
+
+#carrinho {
+    background-color: #f3f0e6; /* Cor de fundo do carrinho */
+    padding: 10px; /* Preenchimento do carrinho */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-top: 20px; /* Margem acima do carrinho */
+}
+
+#lista-carrinho {
+    list-style-type: none; /* Remove marcadores */
+    padding: 0; /* Remove padding */
+}
+
+footer {
+    text-align: center; /* Centraliza o texto do rodapé */
+    margin-top: 20px; /* Margem acima do rodapé */
+    color: white; /* Cor do texto do rodapé */ 
+    background-color: #7B5B4D;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 200px;
+}
+
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+
+.popup.show {
+    opacity: 1;
+}
+
+.pagina-carrinho h1 {
+    margin: 0; /* Remove margens */
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.pagina-carrinho h2, h3 {
+    color: #5b3e30; /* Cor dos títulos */
+    font-size: 2.5em; /* Tamanho dos títulos */
+    text-align: center; /* Centraliza os títulos */
+}
+
+.pagina-carrinho p {
+    color: #5b3e30; /* Cor dos títulos */
+    font-size: 1.5em; /* Tamanho dos títulos */
+    
+}
+
+#carrinho-itens {
+    border: 2px solid transparent; /* Remove a cor da borda */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff; /* Cor de fundo */
+    margin: 20px auto; /* Centraliza a caixa */
+    max-width: 850px; /* Largura máxima aumentada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+
+.pagina-carrinho input[type="number"] {
+    width: 130px; /* Largura do input menor */
+    padding: 10px; /* Preenchimento do input */
+    border: 1px solid #ccc; /* Borda do input */
+    border-radius: 5px;
+    margin-right: 15px; /* Espaço entre o input e o botão */
+    margin-bottom: 10px;
+}
+
+.pagina-carrinho main {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center;
+    margin-top: 20px; /* Espaçamento acima do main */
+    width: 100%; /* Largura total do main */
+    max-width: 1200px; /* Largura máxima do main */
+}
+
+.pagina-contato h3 {
+    color: #5b3e30; /* Cor dos títulos */
+    font-size: 2.0em; /* Tamanho dos títulos */
+    text-align: center; 
+}
+
+.pagina-carrinho .botao-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.pagina-contato p {
+    color: #5b3e30; /* Cor dos títulos */
+    font-size: 1.7em; /* Tamanho dos títulos */
+    text-align: center; 
+}
+
+.infos h2, h3, ul, li, p {
+    text-align: center;
+    align-items: center;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - CA Ferreira Pães</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Pagamento</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="informacoes.html">Mais Informações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="pagamento-form" onsubmit="finalizarPedido(event)">
+            <label for="pagamento">Forma de Pagamento:</label>
+            <select id="pagamento" required onchange="toggleDinheiroInput()">
+                <option value="">Selecione</option>
+                <option value="pix">Pix</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao-debito">Cartão de Débito</option>
+                <option value="cartao-credito">Cartão de Crédito</option>
+            </select>
+
+            <div id="dinheiro-input" style="display:none;">
+                <label for="valor-dinheiro">Valor que vai dar:</label>
+                <input type="number" id="valor-dinheiro" placeholder="Digite o valor" onchange="calcularTroco()">
+            </div>
+
+            <button type="submit">Finalizar Pedido</button>
+        </form>
+
+        <h3>Total do Pedido: R$ <span id="total-pedido">0,00</span></h3>
+    </main>
+
+    <footer>
+        <p>Horário de funcionamento - Todos os Dias, das 08h às 22hs</p>
+    </footer>
+
+    <script>
+        const totalPedido = parseFloat(localStorage.getItem('totalPedido')) || 0;
+        document.getElementById('total-pedido').innerText = totalPedido.toFixed(2).replace('.', ',');
+
+        function toggleDinheiroInput() {
+            const pagamento = document.getElementById('pagamento').value;
+            const dinheiroInput = document.getElementById('dinheiro-input');
+            dinheiroInput.style.display = pagamento === 'dinheiro' ? 'block' : 'none';
+            if (pagamento !== 'dinheiro') {
+                document.getElementById('valor-dinheiro').value = '';
+            }
+        }
+
+        function calcularTroco() {
+    const valorDinheiro = parseFloat(document.getElementById('valor-dinheiro').value) || 0;
+    const troco = valorDinheiro - totalPedido;
+    if (valorDinheiro > 0) {
+        alert(`Troco: R$ ${troco.toFixed(2).replace('.', ',')}`);
+    }
+}
+
+
+        function finalizarPedido(event) {
+            event.preventDefault();
+            const pagamento = document.getElementById('pagamento').value;
+            if (!pagamento) {
+                alert('Por favor, selecione uma forma de pagamento.');
+                return;
+            }
+
+            if (pagamento === 'dinheiro') {
+                const valorDinheiro = parseFloat(document.getElementById('valor-dinheiro').value) || 0;
+                if (valorDinheiro < totalPedido) {
+                    alert('Valor fornecido é insuficiente para o total do pedido.');
+                    return;
+                }
+            }
+
+            alert(`Pedido finalizado com sucesso! Forma de pagamento: ${pagamento}. Seu pedido será entregue em torno de 30 à 40 minutos.`);
+
+            
+            // Limpeza de dados após finalização do pedido
+            localStorage.removeItem('totalPedido');
+            localStorage.removeItem('entregaInfo');
+            localStorage.removeItem('carrinho'); // Limpa o carrinho
+
+            // Opcional: Redirecionar para uma página de agradecimento ou confirmação
+            window.location.href = 'index.html'; // Altere se necessário
+        }
+    </script>
+</body>
+</html>
