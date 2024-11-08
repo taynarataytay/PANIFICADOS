@@ -26,14 +26,6 @@
         </nav>
     </header>
 
-    <section class="sobre">
-        <h3>Muito Mais Do Que Uma Padaria, Uma Experiência Gastrônomica!</h3>
-        <p> Estamos há 22 anos no mercado, oferecendo uma ampla variedade de pães, bolos, doces e variados produtos de excelente qualidade. 
-            Localizados em Varginha, Zona Sul de São Paulo, atendemos padarias, mercados e clientes especiais com carinho e dedicação.
-            <br>
-            Agora, estamos trazendo nossas delícias diretamente para a sua casa! Faça seu pedido e transforme suas refeições em verdadeiras celebrações de sabor, trazendo um toque especial para o seu dia a dia!</p>
-    </section>
-
     <main>
         <div class="categorias">
             <h2>Pães</h2>
@@ -42,35 +34,67 @@
                 <div class="product-list" id="product-list-paes">
                     <div class="product">
                         <img src="img/pao_frances.png" alt="Pão Francês">
-                        <h3>Pão Francês</h3>
-                        <p>R$ 0,50</p>
+                        <h3>Pão Francês Vermelho Congelado</h3>
+                        <p>R$ 36,00</p>
                         <label for="quantidade-pao">Quantidade:</label>
                         <input type="number" id="quantidade-pao" min="1" value="1">
-                        <button onclick="adicionarAoCarrinho('Pão Francês', 0.50, document.getElementById('quantidade-pao').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarAoCarrinho('Pão Francês Vermelho Congelado', 36.00, document.getElementById('quantidade-pao').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/mil_folhas.png" alt="Pão Mil Folhas">
-                        <h3>Pão Mil Folhas</h3>
-                        <p>R$ 3,00</p>
+                        <h3>Pão Francês Verde Congelado</h3>
+                        <p>R$ 36,00</p>
                         <label for="quantidade-pao-mil-folhas">Quantidade:</label>
                         <input type="number" id="quantidade-pao-mil-folhas" min="1" value="1">
-                        <button onclick="adicionarAoCarrinho('Pão Mil Folhas', 3.00, document.getElementById('quantidade-pao-mil-folhas').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarAoCarrinho('Pão Francês Verde Congelado', 36.00, document.getElementById('quantidade-pao-mil-folhas').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/pao_de_milho.png" alt="Pão de Milho">
-                        <h3>Pão de Milho</h3>
-                        <p>R$ 1,50</p>
+                        <h3>Pão Francês Azul Congelado</h3>
+                        <p>R$ 36,00</p>
                         <label for="quantidade-pao-milho">Quantidade:</label>
                         <input type="number" id="quantidade-pao-milho" min="1" value="1">
-                        <button onclick="adicionarAoCarrinho('Pão de Milho', 1.50, document.getElementById('quantidade-pao-milho').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarAoCarrinho('Pão Francês Azul Congelado', 36.00, document.getElementById('quantidade-pao-milho').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/pao_de_queijo.png" alt="Pão de Queijo">
-                        <h3>Pão de Queijo</h3>
-                        <p>R$ 0,75</p>
+                        <h3>Bisnaga Leite</h3>
+                        <p>R$ 36,00</p>
                         <label for="quantidade-pao-queijo">Quantidade:</label>
                         <input type="number" id="quantidade-pao-queijo" min="1" value="1">
-                        <button onclick="adicionarAoCarrinho('Pão de Queijo', 0.75, document.getElementById('quantidade-pao-queijo').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarAoCarrinho('Bisnaga Leite', 36.00, document.getElementById('quantidade-pao-queijo').value)">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/pao_de_queijo.png" alt="Pão de Queijo">
+                        <h3>Bisnaga Milho Comprida</h3>
+                        <p>R$ 36,00</p>
+                        <label for="quantidade-pao-queijo">Quantidade:</label>
+                        <input type="number" id="quantidade-pao-queijo" min="1" value="1">
+                        <button onclick="adicionarAoCarrinho('Bisnaga Milho Comprida', 36.00, document.getElementById('quantidade-pao-queijo').value)">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/pao_de_queijo.png" alt="Pão de Queijo">
+                        <h3>Bisnaga Milho Redondo</h3>
+                        <p>R$ 40,00</p>
+                        <label for="quantidade-pao-queijo">Quantidade:</label>
+                        <input type="number" id="quantidade-pao-queijo" min="1" value="1">
+                        <button onclick="adicionarAoCarrinho('Bisnaga Milho Redondo', 40.00, document.getElementById('quantidade-pao-queijo').value)">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/pao_de_queijo.png" alt="Pão de Queijo">
+                        <h3>Pão Integral</h3>
+                        <p>R$ 36,00</p>
+                        <label for="quantidade-pao-queijo">Quantidade:</label>
+                        <input type="number" id="quantidade-pao-queijo" min="1" value="1">
+                        <button onclick="adicionarAoCarrinho('Pão Integral', 36.00, document.getElementById('quantidade-pao-queijo').value)">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/pao_de_queijo.png" alt="Pão de Queijo">
+                        <h3>Mini Pão</h3>
+                        <p>R$ 36,00</p>
+                        <label for="quantidade-pao-queijo">Quantidade:</label>
+                        <input type="number" id="quantidade-pao-queijo" min="1" value="1">
+                        <button onclick="adicionarAoCarrinho('Mini Pão', 36.00, document.getElementById('quantidade-pao-queijo').value)">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 <button class="carousel-btn" onclick="moveCarousel(1, 'paes')">&#10095;</button>
@@ -78,41 +102,41 @@
         </div>
 
         <div class="categorias">
-            <h2>Frios</h2>
+            <h2>Diversos</h2>
             <div class="product-carousel">
                 <button class="carousel-btn" onclick="moveCarousel(-1, 'frios')">&#10094;</button>
                 <div class="product-list" id="product-list-frios">
                     <div class="product">
                         <img src="img/presunto.png" alt="Presunto">
-                        <h3>Presunto</h3>
-                        <p>R$3,00 - 100 Gramas</p>
+                        <h3>Pão de Queijo</h3>
+                        <p>R$16,00 </p>
                         <label for="quantidade-pao-queijo">Quantidade:</label>
                         <input type="number" id="presunto-grams" min="1" value="1"/>
-                        <button onclick="adicionarFriosAoCarrinho('Presunto', 3.00, document.getElementById('presunto-grams').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarFriosAoCarrinho('Pão de Queijo', 16.00, document.getElementById('presunto-grams').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/mortadela.png" alt="Mortadela">
-                        <h3>Mortadela</h3>
-                        <p>R$2,50 - 100 Gramas</p>
+                        <h3>Palito de Queijo</h3>
+                        <p>R$17,00</p>
                         <label for="quantidade-pao-queijo">Quantidade:</label>
                         <input type="number" id="mortadela-grams" min="1" value="1"/>
-                        <button onclick="adicionarFriosAoCarrinho('Mortadela', 2.50, document.getElementById('mortadela-grams').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarFriosAoCarrinho('Palito de Queijo', 17.00, document.getElementById('mortadela-grams').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/mussarela.png" alt="Queijo Mussarela">
-                        <h3>Queijo Mussarela</h3>
-                        <p>R$3,50 - 100 Gramas</p>
+                        <h3>Chipa de Queijo</h3>
+                        <p>R$17,00</p>
                         <label for="quantidade-pao-queijo">Quantidade:</label>
                         <input type="number" id="queijo-mussarela-grams" min="1" value="1"/>
-                        <button onclick="adicionarFriosAoCarrinho('Queijo Mussarela', 3.50, document.getElementById('queijo-mussarela-grams').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarFriosAoCarrinho('Chipa de Queijo', 17.00, document.getElementById('queijo-mussarela-grams').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/queijo_prato.png" alt="Queijo Prato">
-                        <h3>Queijo Prato</h3>
-                        <p>R$4,00 - 100 Gramas</p>
+                        <h3>Dadinho de Tapioca</h3>
+                        <p>R$17,00</p>
                         <label for="quantidade-pao-queijo">Quantidade:</label>
                         <input type="number" id="queijo-prato-grams" min="1" value="1"/>
-                        <button onclick="adicionarFriosAoCarrinho('Queijo Prato', 4.00, document.getElementById('queijo-prato-grams').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarFriosAoCarrinho('Dadinho de Tapioca', 17.00, document.getElementById('queijo-prato-grams').value)">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 <button class="carousel-btn" onclick="moveCarousel(1, 'frios')">&#10095;</button>
@@ -120,25 +144,25 @@
         </div>
 
         <div class="categorias">
-            <h2>Salgados</h2>
+            <h2>Confeitaria</h2>
             <div class="product-carousel">
                 <button class="carousel-btn" onclick="moveCarousel(-1, 'salgados')">&#10094;</button>
                 <div class="product-list" id="product-list-salgados">
                     <div class="product">
                         <img src="img/coxinha.png" alt="Coxinha">
-                        <h3>Coxinha</h3>
-                        <p>R$ 4,00</p>
+                        <h3>Sonho</h3>
+                        <p>R$ 45,00</p>
                         <label for="quantidade-coxinha">Quantidade:</label>
                         <input type="number" id="quantidade-coxinha" min="1" value="1">
-                        <button onclick="adicionarAoCarrinho('Coxinha', 4.00, document.getElementById('quantidade-coxinha').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarAoCarrinho('Sonho', 45.00, document.getElementById('quantidade-coxinha').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/esfiha.png" alt="Esfiha de Carne">
-                        <h3>Esfiha de Carne</h3>
-                        <p>R$ 5,00</p>
+                        <h3>Rosquinha</h3>
+                        <p>R$ 45,00</p>
                         <label for="quantidade-esfiha">Quantidade:</label>
                         <input type="number" id="quantidade-esfiha" min="1" value="1">
-                        <button onclick="adicionarAoCarrinho('Esfiha de Carne', 5.00, document.getElementById('quantidade-esfiha').value)">Adicionar ao Carrinho</button>
+                        <button onclick="adicionarAoCarrinho('Rosquinha', 45.00, document.getElementById('quantidade-esfiha').value)">Adicionar ao Carrinho</button>
                     </div>
                     <div class="product">
                         <img src="img/quibe.png" alt="Quibe">
@@ -416,6 +440,12 @@ function buscarProduto() {
 
 // Atualiza o carrinho ao carregar a página
 document.addEventListener('DOMContentLoaded', atualizarCarrinho);
+
+
+    </script>
+    
+</body>
+</html>
 
 
     </script>
